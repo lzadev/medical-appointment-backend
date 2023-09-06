@@ -18,7 +18,7 @@ export class SpecialitiesService {
   }
 
   findAll() {
-    return `This action returns all specialities`;
+    return `This action returns all specialitie`;
   }
 
   findOne(id: number) {
