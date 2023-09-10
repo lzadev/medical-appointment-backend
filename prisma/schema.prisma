@@ -14,8 +14,19 @@ model Speciality {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  code      String
+  code      String   @unique @db.VarChar(20)
   name      String   @unique @db.VarChar(200)
 
   @@map("specialities")
+}
+
+model SystemParameter {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  prefix      String   @db.VarChar(20)
+  secuence    String   @default("000000")
+  description String   @db.VarChar(200)
+
+  @@map("SystemParameters")
 }
